@@ -8,6 +8,26 @@ import WhatScreen from './screens/WhatScreen.js';
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
+HomeScreen.navigationOptions = {
+  header: null,
+};
+
+AboutScreen.navigationOptions = {
+  title: 'About',
+};
+
+ByGroupScreen.navigationOptions = {
+  title: 'Butterflies by Group',
+};
+
+AllScreen.navigationOptions = {
+  title: 'All Butterflies',
+};
+
+WhatScreen.navigationOptions = {
+  title: 'What butterflies are in this app?',
+};
+
 const AppNavigator = createStackNavigator({
   Home: HomeScreen,
   About: AboutScreen,
@@ -16,10 +36,15 @@ const AppNavigator = createStackNavigator({
   What: WhatScreen,
 },
 {
-  headerMode: 'none',
-//  navigationOptions: {
-//    headerVisible: false,
-//  },
+  defaultNavigationOptions: {
+    headerTitleStyle: {
+      color: '#fff',
+    },
+    headerStyle: {
+      backgroundColor: '#000',
+    },
+    headerTintColor: '#fff',
+  },
 });
 
 export default createAppContainer(AppNavigator);
