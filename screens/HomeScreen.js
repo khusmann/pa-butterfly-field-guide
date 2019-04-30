@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
 
 export default class App extends React.Component {
   render() {
