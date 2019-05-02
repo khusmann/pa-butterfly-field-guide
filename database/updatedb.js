@@ -15,6 +15,7 @@ request(url, { json: true }, (err, res, body) => {
     const bfdb = bfdb_raw.map(i => ({
       ...i,
       image: imagelookup[i.image],
+      nobs: parseInt(i.nobs)
     }));
     export default bfdb;
   `;
