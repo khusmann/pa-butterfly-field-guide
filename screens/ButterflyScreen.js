@@ -1,14 +1,13 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text, Image, View } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { Text, View } from 'react-native';
 import FullWidthImage from '../components/FullWidthImage';
 
 import BFDB from '../database/ButterflyDatabase';
 
 export default ButterflyScreen = (props) => {
   const { navigation } = props;
-  const butterfly = BFDB.find((item) => item.name == navigation.getParam('butterfly'));
-  const { width, height } = Image.resolveAssetSource(butterfly.image);
+  const butterfly = BFDB.bf.find((item) => item.name == navigation.getParam('butterfly'));
+
   return (
       <View style={{ flex: 1, backgroundColor: '#000' }}>
         <FullWidthImage source={butterfly.image} />
