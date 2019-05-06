@@ -7,7 +7,12 @@ import FullWidthImage from '../components/FullWidthImage';
 import BFDB from '../database/ButterflyDatabase';
 
 export default AllScreen = (props) => {
-  const butterflies = BFDB.sort((a, b) => a.nobs < b.nobs);
+  const { navigation } = props;
+  const group = navigation.getParam('group');
+  const butterflies = BFDB
+                        .sort((a, b) => a.nobs < b.nobs)
+                        .filter((item) => !group || (item.group === group));
+  console.log(group)
   return (
     <ScrollView style={styles.container}>
       {

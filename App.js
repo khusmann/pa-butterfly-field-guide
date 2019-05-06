@@ -21,9 +21,9 @@ ByGroupScreen.navigationOptions = {
   title: 'Butterflies by Group',
 };
 
-AllScreen.navigationOptions = {
-  title: 'All Butterflies',
-};
+AllScreen.navigationOptions = ({ navigation }) => ({
+  title: navigation.getParam('group', 'All Butterflies'),
+});
 
 WhatScreen.navigationOptions = {
   title: 'What butterflies are in this app?',
