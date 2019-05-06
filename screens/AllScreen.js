@@ -17,6 +17,7 @@ export default AllScreen = (props) => {
           >
             <Button
               title={bf.name}
+              onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}
             />
           </Card>
         ))
