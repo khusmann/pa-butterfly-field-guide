@@ -3,10 +3,11 @@ import { TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 
 import FullWidthImage from '../components/FullWidthImage';
+import withLoadingIndicator from '../components/withLoadingIndicator';
 
 import BFDB from '../database/ButterflyDatabase';
 
-export default AllScreen = (props) => {
+export default AllScreen = withLoadingIndicator((props) => {
   const { navigation } = props;
   const group = navigation.getParam('group');
   const butterflies = BFDB.bf
@@ -35,7 +36,7 @@ export default AllScreen = (props) => {
       }
     </ScrollView>
   );
-}
+});
 
 const styles = StyleSheet.create({
   container: {
