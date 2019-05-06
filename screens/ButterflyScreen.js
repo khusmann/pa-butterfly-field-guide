@@ -16,6 +16,9 @@ export default ButterflyScreen = (props) => {
           Scientific Name: <Text style={{ fontStyle: 'italic' }}>{butterfly.sciName}</Text>
         </Text>
         <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
+          Family: <Text style={{ fontStyle: 'italic' }}>{butterfly.family}</Text>
+        </Text>
+        <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
           Subfamily: <Text style={{ fontStyle: 'italic' }}>{butterfly.subfamily}</Text>
         </Text>
         <Text style={{ fontSize: 12, margin: 10, marginTop: 30, color: '#fff' }}>
