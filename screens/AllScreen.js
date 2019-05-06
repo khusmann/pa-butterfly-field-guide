@@ -1,6 +1,8 @@
 import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
+import { TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Card, Button } from 'react-native-elements';
+
+import FullWidthImage from '../components/FullWidthImage';
 
 import BFDB from '../database/ButterflyDatabase';
 
@@ -12,9 +14,13 @@ export default AllScreen = (props) => {
         butterflies.map((bf) => (
           <Card
             key={bf.name}
-            image={bf.image}
-            imageProps={{ resizeMode: 'contain' }}
+            containerStyle={{ backgroundColor: '#FFCF9E', borderRadius: 10 }}
           >
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}
+            >
+              <FullWidthImage source={bf.image} />
+            </TouchableOpacity>
             <Button
               title={bf.name}
               onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}
@@ -29,6 +35,6 @@ export default AllScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
   },
 });
