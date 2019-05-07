@@ -45,7 +45,7 @@ export default ButterflyScreen = (props) => {
         <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
           {replaceLinkText(butterfly.extra, navigation)}
         </Text>
-        <Text style={{ fontSize: 12, margin: 10, marginTop: 30, color: '#fff' }}>
+        <Text style={{ fontSize: 10, margin: 10, color: '#fff' }}>
           {replaceLinkText(butterfly.copyright, navigation)}
         </Text>
       </ScrollView>
