@@ -1,19 +1,19 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, ScrollView, Text } from 'react-native';
 
 export default AboutScreen = (props) => {
   return (
-    <View style={styles.container}>
-      <Text>This is the about screen</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
+        This is the about screen
+      </Text>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#000',
   },
 });
