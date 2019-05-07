@@ -3,10 +3,11 @@ import { TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 
 import FullWidthImage from '../components/FullWidthImage';
+import withLoadingIndicator from '../components/withLoadingIndicator';
 
 import BFDB from '../database/ButterflyDatabase';
 
-export default ByGroupScreen = (props) => {
+export default ByGroupScreen =  withLoadingIndicator((props) => {
   const groups = BFDB.grp;
 
   return (
@@ -31,7 +32,7 @@ export default ByGroupScreen = (props) => {
       }
     </ScrollView>
   );
-}
+});
 
 const styles = StyleSheet.create({
   container: {

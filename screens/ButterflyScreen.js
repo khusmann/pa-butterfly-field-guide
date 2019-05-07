@@ -2,7 +2,25 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import FullWidthImage from '../components/FullWidthImage';
 
+import { WebBrowser } from 'expo';
+
 import BFDB from '../database/ButterflyDatabase';
+
+const replaceLinkText = t => (
+  t.split(/(\[.*?\]\(.*?\))/)
+   .map((i, idx) => {
+      const m = i.match(/\[(.*?)\]\((.*?)\)/);
+      return m ? (
+        <Text
+          key={`${m[1]}${idx}`} 
+          style={{ color: 'aqua' }}
+          onPress={() => WebBrowser.openBrowserAsync(m[2])}
+        >
+          {m[1]}
+        </Text>
+      ) : i;
+   })
+);
 
 export default ButterflyScreen = (props) => {
   const { navigation } = props;
@@ -21,7 +39,7 @@ export default ButterflyScreen = (props) => {
           Subfamily: <Text style={{ fontStyle: 'italic' }}>{butterfly.subfamily}</Text>
         </Text>
         <Text style={{ fontSize: 12, margin: 10, marginTop: 30, color: '#fff' }}>
-          {butterfly.copyright}
+          {replaceLinkText(butterfly.copyright)}
         </Text>
       </View>
   );
