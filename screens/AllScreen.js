@@ -7,6 +7,8 @@ import withLoadingIndicator from '../components/withLoadingIndicator';
 
 import BFDB from '../database/ButterflyDatabase';
 
+const bfColor = bf => BFDB.grp.find(item => item.name === bf.group).color;
+
 export default AllScreen = withLoadingIndicator((props) => {
   const { navigation } = props;
   const group = navigation.getParam('group');
@@ -20,7 +22,7 @@ export default AllScreen = withLoadingIndicator((props) => {
         butterflies.map((bf) => (
           <Card
             key={bf.name}
-            containerStyle={{ backgroundColor: '#FFCF9E', borderRadius: 10 }}
+            containerStyle={{ backgroundColor: bfColor(bf), borderRadius: 10 }}
           >
             <TouchableOpacity
               onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}

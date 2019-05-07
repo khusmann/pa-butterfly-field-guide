@@ -15,7 +15,7 @@ export default ByGroupScreen = (props) => {
         groups.map((grp) => (
           <Card
             key={grp.name}
-            containerStyle={{ backgroundColor: '#FFCF9E', borderRadius: 10 }}
+            containerStyle={{ backgroundColor: grp.color, borderRadius: 10 }}
           >
             <TouchableOpacity
               onPress={() => props.navigation.navigate('All', { group: grp.name })}
