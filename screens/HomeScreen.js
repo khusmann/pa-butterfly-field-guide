@@ -1,13 +1,15 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
+
+import FullWidthImage from '../components/FullWidthImage';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.titleText}>Pennsylvania Butterflies</Text>
-        <Image 
+        <FullWidthImage 
           source={require('../assets/logo.png')}
         />
         <Button
