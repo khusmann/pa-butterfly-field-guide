@@ -19,6 +19,7 @@ export default ByGroupScreen =  withLoadingIndicator((props) => {
             image={grp.image}
             first={idx === 0}
             backgroundColor={grp.color}
+            onPress={() => props.navigation.navigate('All', { group: grp.name })}
           />
         ))
       }

@@ -24,6 +24,7 @@ export default AllScreen = withLoadingIndicator((props) => {
             image={bf.image}
             first={idx === 0}
             backgroundColor={bfColor(bf)}
+            onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}
           />
         ))
       }
