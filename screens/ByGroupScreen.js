@@ -4,6 +4,8 @@ import { StyleSheet, ScrollView } from 'react-native';
 import withLoadingIndicator from '../components/withLoadingIndicator';
 import ImageCard from '../components/ImageCard';
 
+import styles from './styles';
+
 import BFDB from '../database/ButterflyDatabase';
 
 export default ByGroupScreen =  withLoadingIndicator((props) => {
@@ -26,11 +28,3 @@ export default ByGroupScreen =  withLoadingIndicator((props) => {
     </ScrollView>
   );
 });
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-  },
-});
-

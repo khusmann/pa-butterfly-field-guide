@@ -1,13 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 import FullWidthImage from '../components/FullWidthImage';
 import MenuButton from '../components/MenuButton';
 
+import styles from './styles';
+
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.menuContainer}>
         <Text style={styles.titleText}>Pennsylvania Butterflies</Text>
         <FullWidthImage 
           source={require('../assets/logo.png')}
@@ -32,16 +34,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  titleText: {
-    color: 'white',
-    fontSize: 30,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-  },
-});

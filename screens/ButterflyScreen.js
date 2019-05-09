@@ -1,6 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, ScrollView } from 'react-native';
+import { Text, ScrollView } from 'react-native';
+
 import FullWidthImage from '../components/FullWidthImage';
+
+import styles from './styles';
 
 import { WebBrowser } from 'expo';
 
@@ -31,8 +34,7 @@ export default ButterflyScreen = (props) => {
   const butterfly = BFDB.bf.find((item) => item.name == navigation.getParam('butterfly'));
 
   return (
-      <ScrollView style={{ backgroundColor: '#000' }}
-      >
+      <ScrollView style={styles.container}>
         <FullWidthImage source={butterfly.image} />
         <Text style={styles.text}>
           Scientific Name: <Text style={styles.emph}>{butterfly.sciName}</Text>
@@ -54,20 +56,3 @@ export default ButterflyScreen = (props) => {
       </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 20,
-    margin: 10,
-    color: '#fff',
-  },
-  copyright: {
-    fontSize: 10,
-  },
-  emph: {
-    fontStyle: 'italic',
-  },
-  link: {
-    color: 'aqua',
-  },
-});
