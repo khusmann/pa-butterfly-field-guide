@@ -13,7 +13,7 @@ export default AboutScreen = (props) => {
         The goal of the research project is to study how people learn about biodiversity and the natural environment through their own initiative.
       </Text>
       <Text style={styles.text}>
-        The app was coded and created by Kyle Husmann. Without him, this project would not have been possible.
+        The app was coded by Kyle Husmann. Without him, this project would not have been possible.
       </Text>
       <Text style={styles.text}>
         The artwork used to represent each butterfly group was created by Bethany Gindhart.
