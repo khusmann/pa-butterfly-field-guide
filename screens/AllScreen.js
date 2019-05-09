@@ -12,7 +12,7 @@ export default AllScreen = withLoadingIndicator((props) => {
   const { navigation } = props;
   const group = navigation.getParam('group');
   const butterflies = BFDB.bf
-                      .filter((item) => !group || (item.group === group));
+                      .filter((item) => !(group && (item.group !== group)));
 
   return (
     <ScrollView style={styles.container}>
