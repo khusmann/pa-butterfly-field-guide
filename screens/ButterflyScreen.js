@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, ScrollView } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 import FullWidthImage from '../components/FullWidthImage';
 
 import { WebBrowser } from 'expo';
@@ -13,7 +13,7 @@ const replaceLinkText = (t, navigation) => (
       return m ? (
         <Text
           key={`${m[1]}${idx}`} 
-          style={{ color: 'aqua' }}
+          style={styles.link}
           onPress={
             BFDB.bf.find(bf => (bf.name === m[2])) ?
               () => navigation.push('Butterfly', { butterfly: m[2] }) :
@@ -31,23 +31,43 @@ export default ButterflyScreen = (props) => {
   const butterfly = BFDB.bf.find((item) => item.name == navigation.getParam('butterfly'));
 
   return (
-      <ScrollView style={{ flex: 1, backgroundColor: '#000' }}>
+      <ScrollView style={{ backgroundColor: '#000' }}
+      >
         <FullWidthImage source={butterfly.image} />
-        <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
-          Scientific Name: <Text style={{ fontStyle: 'italic' }}>{butterfly.sciName}</Text>
+        <Text style={styles.text}>
+          Scientific Name: <Text style={styles.emph}>{butterfly.sciName}</Text>
         </Text>
-        <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
-          Family: <Text style={{ fontStyle: 'italic' }}>{butterfly.family}</Text>
+        <Text style={styles.text}>
+          Family: <Text style={styles.emph}>{butterfly.family}</Text>
         </Text>
-        <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
-          Subfamily: <Text style={{ fontStyle: 'italic' }}>{butterfly.subfamily}</Text>
+        <Text style={styles.text}>
+          Subfamily: <Text style={styles.emph}>{butterfly.subfamily}</Text>
         </Text>
-        <Text style={{ fontSize: 20, margin: 10, color: '#fff' }}>
+        <Text style={styles.text}>
           {replaceLinkText(butterfly.extra, navigation)}
         </Text>
-        <Text style={{ fontSize: 10, margin: 10, color: '#fff' }}>
-          {replaceLinkText(butterfly.copyright, navigation)}
+        <Text style={styles.text}>
+          <Text style={styles.copyright}>
+            {replaceLinkText(butterfly.copyright, navigation)}
+          </Text>
         </Text>
       </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 20,
+    margin: 10,
+    color: '#fff',
+  },
+  copyright: {
+    fontSize: 10,
+  },
+  emph: {
+    fontStyle: 'italic',
+  },
+  link: {
+    color: 'aqua',
+  },
+});
