@@ -14,12 +14,11 @@ export default ByGroupScreen =  withLoadingIndicator((props) => {
   return (
     <ScrollView style={styles.container}>
       {
-        groups.map((grp, idx) => (
+        groups.map(grp => (
           <ImageCard
             key={grp.name}
             title={grp.name}
             image={grp.image}
-            first={idx === 0}
             backgroundColor={grp.color}
             onPress={() => props.navigation.navigate('All', { group: grp.name })}
           />

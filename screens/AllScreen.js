@@ -19,12 +19,11 @@ export default AllScreen = withLoadingIndicator((props) => {
   return (
     <ScrollView style={styles.container}>
       {
-        butterflies.map((bf, idx) => (
+        butterflies.map(bf => (
           <ImageCard
             key={bf.name}
             title={bf.name}
             image={bf.image}
-            first={idx === 0}
             backgroundColor={bfColor(bf)}
             onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}
           />

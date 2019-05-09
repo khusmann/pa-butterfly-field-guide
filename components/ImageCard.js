@@ -4,7 +4,7 @@ import { TouchableOpacity, View, Text } from 'react-native';
 import FullWidthImage from '../components/FullWidthImage';
 
 export default ImageCard = (props) => {
-  const { image, onPress, backgroundColor, first, title } = props;
+  const { image, onPress, backgroundColor, title } = props;
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -13,7 +13,7 @@ export default ImageCard = (props) => {
         borderRadius: 10,
         padding: 15,
         margin: 15,
-        marginTop: first ? undefined : 0,
+        marginTop: 0,
       }}
     >
       <FullWidthImage source={image} />
