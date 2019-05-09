@@ -8,29 +8,26 @@ export default ImageCard = (props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
+      style={{
+        backgroundColor: backgroundColor,
+        borderRadius: 10,
+        padding: 15,
+        margin: 15,
+        marginTop: first ? undefined : 0,
+      }}
     >
+      <FullWidthImage source={image} />
       <View 
         style={{
-          backgroundColor: backgroundColor,
-          borderRadius: 10,
           padding: 15,
-          margin: 15,
-          marginTop: first ? undefined : 0,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#969696'
         }}
-      >
-        <FullWidthImage source={image} />
-        <View 
-          style={{
-            padding: 10,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#969696'
-          }}
-          >
-          <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#323232' }}>
-            {title}
-          </Text>
-        </View>
+        >
+        <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#323232' }}>
+          {title}
+        </Text>
       </View>
     </TouchableOpacity>
   );

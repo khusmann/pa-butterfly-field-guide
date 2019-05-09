@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
 
 import FullWidthImage from '../components/FullWidthImage';
+import MenuButton from '../components/MenuButton';
 
 export default class App extends React.Component {
   render() {
@@ -12,23 +12,19 @@ export default class App extends React.Component {
         <FullWidthImage 
           source={require('../assets/logo.png')}
         />
-        <Button
-          style={styles.menuButton}
+        <MenuButton
           onPress={() => this.props.navigation.navigate('ByGroup')}
           title="Butterflies by Group"
         />
-        <Button
-          style={styles.menuButton}
+        <MenuButton
           onPress={() => this.props.navigation.navigate('All')}
           title="All Butterflies"
         />
-        <Button
-          style={styles.menuButton}
+        <MenuButton
           onPress={() => this.props.navigation.navigate('What')}
           title="What butterflies are in this app?"
         />
-        <Button
-          style={styles.menuButton}
+        <MenuButton
           onPress={() => this.props.navigation.navigate('About')}
           title="About"
         />
@@ -41,9 +37,6 @@ const styles = StyleSheet.create({
   titleText: {
     color: 'white',
     fontSize: 30,
-  },
-  menuButton: {
-
   },
   container: {
     flex: 1,
