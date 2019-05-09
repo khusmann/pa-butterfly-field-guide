@@ -1,6 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { TouchableOpacity, StyleSheet, ScrollView, View, Text } from 'react-native';
 
 import FullWidthImage from '../components/FullWidthImage';
 import withLoadingIndicator from '../components/withLoadingIndicator';
@@ -13,21 +12,35 @@ export default ByGroupScreen =  withLoadingIndicator((props) => {
   return (
     <ScrollView style={styles.container}>
       {
-        groups.map((grp) => (
-          <Card
+        groups.map((grp, idx) => (
+          <TouchableOpacity
             key={grp.name}
-            containerStyle={{ backgroundColor: grp.color, borderRadius: 10 }}
+            onPress={() => props.navigation.navigate('All', { group: grp.name })}
           >
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate('All', { group: grp.name })}
+            <View 
+              style={{
+                backgroundColor: grp.color,
+                borderRadius: 10,
+                padding: 15,
+                margin: 15,
+                marginTop: idx === 0 ? undefined : 0,
+              }}
             >
               <FullWidthImage source={grp.image} />
-            </TouchableOpacity>
-            <Button
-              title={grp.name}
-              onPress={() => props.navigation.navigate('All', { group: grp.name })}
-            />
-          </Card>
+              <View 
+                style={{
+                  padding: 10,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: '#969696'
+                }}
+               >
+                <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#323232' }}>
+                  {grp.name}
+                </Text>
+              </View>
+            </View>
+          </TouchableOpacity>
         ))
       }
     </ScrollView>
