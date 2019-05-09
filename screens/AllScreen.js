@@ -1,9 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { StyleSheet, ScrollView } from 'react-native';
 
-import FullWidthImage from '../components/FullWidthImage';
 import withLoadingIndicator from '../components/withLoadingIndicator';
+import ImageCard from '../components/ImageCard';
 
 import BFDB from '../database/ButterflyDatabase';
 
@@ -13,27 +12,19 @@ export default AllScreen = withLoadingIndicator((props) => {
   const { navigation } = props;
   const group = navigation.getParam('group');
   const butterflies = BFDB.bf
-                      .sort((a, b) => a.nobs < b.nobs)
                       .filter((item) => !group || (item.group === group));
 
   return (
     <ScrollView style={styles.container}>
       {
-        butterflies.map((bf) => (
-          <Card
+        butterflies.map((bf, idx) => (
+          <ImageCard
             key={bf.name}
-            containerStyle={{ backgroundColor: bfColor(bf), borderRadius: 10 }}
-          >
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}
-            >
-              <FullWidthImage source={bf.image} />
-            </TouchableOpacity>
-            <Button
-              title={bf.name}
-              onPress={() => props.navigation.navigate('Butterfly', { butterfly: bf.name })}
-            />
-          </Card>
+            title={bf.name}
+            image={bf.image}
+            first={idx === 0}
+            backgroundColor={bfColor(bf)}
+          />
         ))
       }
     </ScrollView>
