@@ -22,10 +22,10 @@ export default ImageCard = (props) => {
           padding: 15,
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#969696'
+          backgroundColor: '#f0f0f0'
         }}
         >
-        <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#323232' }}>
+        <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#282828' }}>
           {title}
         </Text>
       </View>
