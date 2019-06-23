@@ -15,9 +15,6 @@ export default AboutScreen = (props) => {
       <Text style={styles.text}>
         The app was coded by Kyle Husmann. Without him, this project would not have been possible.
       </Text>
-      <Text style={styles.text}>
-        The artwork used to represent each butterfly group was created by Bethany Gindhart.
-      </Text>
     </ScrollView>
   );
 }
