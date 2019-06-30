@@ -30,7 +30,8 @@
       "adaptiveIcon": {
         "backgroundColor": "#000000",
         "foregroundImage": "./assets/iconAndroidForeground.png"
-      }
+      },
+      "permissions": []
     }
   }
 }
