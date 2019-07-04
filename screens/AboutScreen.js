@@ -1,6 +1,8 @@
 import React from 'react';
 import { ScrollView, Text } from 'react-native';
 
+import { WebBrowser } from 'expo';
+
 import styles from './styles';
 
 export default AboutScreen = (props) => {
@@ -14,6 +16,12 @@ export default AboutScreen = (props) => {
       </Text>
       <Text style={styles.text}>
         The app was coded by Kyle Husmann. Without him, this project would not have been possible.
+      </Text>
+      <Text
+          style={[styles.text, styles.link]}
+          onPress={() => WebBrowser.openBrowserAsync('https://sites.google.com/view/pa-butterfly-field-guide/privacy-policy')}
+      >
+        Privacy Policy
       </Text>
     </ScrollView>
   );
