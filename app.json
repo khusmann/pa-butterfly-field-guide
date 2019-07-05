@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "2.0.0",
+    "versionCode": 2.0,
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -30,7 +30,6 @@
       "adaptiveIcon": {
         "backgroundColor": "#000000",
         "foregroundImage": "./assets/iconAndroidForeground.png"
-      "versionCode":2
       },
       "permissions": []
     }
