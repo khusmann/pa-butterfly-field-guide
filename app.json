@@ -26,6 +26,7 @@
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 2,
       "package": "com.mteuber.pabutterflyfieldguide",
       "adaptiveIcon": {
         "backgroundColor": "#000000",
