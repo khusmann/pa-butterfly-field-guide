@@ -17,7 +17,7 @@ export default AllScreen = withLoadingIndicator((props) => {
                       .filter((item) => !(group && (item.group !== group)));
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} removeClippedSubviews>
       {
         butterflies.map(bf => (
           <ImageCard

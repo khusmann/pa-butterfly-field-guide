@@ -12,7 +12,7 @@ export default ByGroupScreen =  withLoadingIndicator((props) => {
   const groups = BFDB.grp;
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} removeClippedSubviews>
       {
         groups.map(grp => (
           <ImageCard
