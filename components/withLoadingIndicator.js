@@ -13,10 +13,6 @@ export default withLoadingIndicator = (WrappedComponent) => {
       loaded: false,
     };
 
-    componentWillMount() {
-      this.setState({ loaded: false });
-    }
-
     componentDidMount() {
       InteractionManager.runAfterInteractions(() => {
         this.setState({ loaded: true });
