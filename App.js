@@ -62,19 +62,7 @@ const AppNavigator = createStackNavigator(
       headerStyle: {
         backgroundColor: "#000",
       },
-      //headerTintColor: '#fff',
-      //Tint color not working on Meg's computer, replacing entire headerLeft instead...
-      headerLeft: (
-        <Ionicons
-          name="arrow-back"
-          size={24}
-          color="#fff"
-          style={{ marginBottom: -4, width: 25, marginLeft: 20 }}
-          onPress={() => {
-            props.navigation.goBack();
-          }}
-        />
-      ),
+      headerTintColor: "#fff",
     }),
   }
 );
