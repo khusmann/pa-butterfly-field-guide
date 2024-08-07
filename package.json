@@ -5,16 +5,18 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "updatedb": "./node_modules/.bin/babel-node database/updatedb"
+    "updatedb": "./node_modules/.bin/babel-node database/updatedb",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "expo": "^51.0.0",
+    "patch-package": "^8.0.0",
     "react": "18.2.0",
     "react-native": "0.74.5",
-    "react-navigation": "^4.4.4",
-    "react-navigation-stack": "^1.10.3",
     "react-native-gesture-handler": "~2.16.1",
-    "react-native-reanimated": "~3.10.1"
+    "react-native-reanimated": "~3.10.1",
+    "react-navigation": "^4.4.4",
+    "react-navigation-stack": "^1.10.3"
   },
   "devDependencies": {
     "@babel/node": "^7.2.2",
