@@ -1,6 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { StyleSheet, ActivityIndicator, InteractionManager, View } from 'react-native';
+import {
+  StyleSheet,
+  ActivityIndicator,
+  InteractionManager,
+  View,
+} from "react-native";
 
 export default withLoadingIndicator = (WrappedComponent) => {
   return class extends React.Component {
@@ -25,7 +30,14 @@ export default withLoadingIndicator = (WrappedComponent) => {
         return <WrappedComponent {...this.props} />;
       }
       return (
-        <View style={{ ...StyleSheet.absoluteFillObject, backgroundColor: '#000', alignItems: 'center', justifyContent: 'center' }}>
+        <View
+          style={{
+            ...StyleSheet.absoluteFillObject,
+            backgroundColor: "#000",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <ActivityIndicator size="large" color="#fff" />
         </View>
       );

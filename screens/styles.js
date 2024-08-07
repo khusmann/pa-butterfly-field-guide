@@ -1,31 +1,31 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 export default styles = StyleSheet.create({
   titleText: {
-    color: 'white',
+    color: "white",
     fontSize: 30,
   },
   menuContainer: {
     flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
+    backgroundColor: "#000",
+    alignItems: "center",
+    justifyContent: "space-evenly",
   },
   container: {
-    backgroundColor: '#000',
+    backgroundColor: "#000",
   },
   text: {
     fontSize: 20,
     margin: 10,
-    color: '#fff',
+    color: "#fff",
   },
   copyright: {
     fontSize: 10,
   },
   emph: {
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
   link: {
-    color: 'aqua',
+    color: "aqua",
   },
 });
