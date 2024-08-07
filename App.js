@@ -66,7 +66,7 @@ const AppNavigator = createStackNavigator(
       //Tint color not working on Meg's computer, replacing entire headerLeft instead...
       headerLeft: (
         <Ionicons
-          name="md-arrow-back"
+          name="arrow-back"
           size={24}
           color="#fff"
           style={{ marginBottom: -4, width: 25, marginLeft: 20 }}
