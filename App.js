@@ -8,7 +8,10 @@ import AllScreen from "./screens/AllScreen.js";
 import ByGroupScreen from "./screens/ByGroupScreen.js";
 import WhatScreen from "./screens/WhatScreen.js";
 
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 import ButterflyScreen from "./screens/ButterflyScreen.js";
 
 HomeScreen.navigationOptions = {
@@ -34,6 +37,13 @@ WhatScreen.navigationOptions = {
 ButterflyScreen.navigationOptions = ({ navigation }) => ({
   title: navigation.getParam("butterfly"),
 });
+
+const withGestureHandlerRootView = (Component) => (props) =>
+  (
+    <GestureHandlerRootView>
+      <Component {...props} />
+    </GestureHandlerRootView>
+  );
 
 const AppNavigator = createStackNavigator(
   {
@@ -66,7 +76,7 @@ const AppNavigator = createStackNavigator(
         />
       ),
     }),
-  },
+  }
 );
 
-export default createAppContainer(AppNavigator);
+export default withGestureHandlerRootView(createAppContainer(AppNavigator));
