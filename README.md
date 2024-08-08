@@ -37,8 +37,9 @@ npm install
 npx expo start
 ```
 
-Note that the expo go app goes out of date quickly, so you may need to run in a
-simulator. According to
+Note that the expo go app only supports the latest SDK versions, so you will
+need to run this in a simulator unless the expo go on your device supports SDK
+v33.0.0. According to
 [expo.fyi](https://github.com/expo/fyi/blob/main/outdated-sdk-versions.md):
 
 > You can continue to use Expo Go on for old SDK versions by installing it
