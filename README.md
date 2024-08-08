@@ -34,8 +34,18 @@ To run it from source, clone the repo and run:
 
 ```
 npm install
-expo start
+npx expo start
 ```
+
+Note that the expo go app goes out of date quickly, so you may need to run in a
+simulator. According to
+[expo.fyi](https://github.com/expo/fyi/blob/main/outdated-sdk-versions.md):
+
+> You can continue to use Expo Go on for old SDK versions by installing it
+> through Expo CLI. Run npx expo start in your project and launch it from the
+> interactive prompt — the Expo Go app will be installed with the correct
+> version for your project. Note that this is not possible on iOS devices, only
+> on simulators, due to restrictions around sideloading.
 
 ## Screenshots
 
