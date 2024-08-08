@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Ionicons } from "@expo/vector-icons";
-
 import HomeScreen from "./screens/HomeScreen.js";
 import AboutScreen from "./screens/AboutScreen.js";
 import AllScreen from "./screens/AllScreen.js";
